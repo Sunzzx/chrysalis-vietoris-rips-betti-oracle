@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chrysalis-vietoris-rips-betti-oracle"
+version = "0.1.0"
+description = "Vietoris-Rips persistent homology: boundary-matrix reduction, Betti barcodes, and topological shape oracles for biomedical point clouds"
+authors = [{name = "Sunzzx & Hermes AI"}]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.24",
+]
+keywords = [
+    "persistent-homology",
+    "vietoris-rips",
+    "topological-data-analysis",
+    "betti-numbers",
+    "barcode",
+    "filtration",
+    "computational-topology",
+    "point-cloud",
+    "biomedical-shape",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0"]
+
+[project.urls]
+Homepage = "https://github.com/Sunzzx/chrysalis-vietoris-rips-betti-oracle"
+Repository = "https://github.com/Sunzzx/chrysalis-vietoris-rips-betti-oracle"
+Issues = "https://github.com/Sunzzx/chrysalis-vietoris-rips-betti-oracle/issues"
+Sponsor = "https://github.com/sponsors/Sunzzx"
+License-Commercial = "https://buy.stripe.com/test_chrysalis_enterprise"
+
+[project.scripts]
+chrysalis = "chrysalis.demo:main"
+chrysalis-demo = "chrysalis.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chrysalis*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q --tb=short"
